@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "ef1fe334-fde2-4a24-a115-9570d42fd5ec",
+		"name": "StarterPet",
+		"description": "_Seja bem-vindo(a) a nossa API de PETS! Essa API é perfeita pra você que não se importa se é um cãozinho ou um gatinho, você só quer um companheiro._\n\n_Tudo bem amigo(a), eu te entendo._\n\nNessa API, utilizamos as API's externas **\"TheDogAPI\"** e **\"TheCatAPI\"**, que foi consumida com o RestTemplate.\n\nOs Endpoints utilizados nessa API estão salvos e configurados, tornando a API pronta para uso.\n\n_Divirta-se!_\n\n_Atenciosamente,_\n\n_Luisa Coelho_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41310451"
+	},
+	"item": [
+		{
+			"name": "Sistema de Cadastro",
+			"item": [
+				{
+					"name": "Cadastrar um Pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Exemplo-Nome\",\r\n  \"breed\": \"Exemplo-Raça\",\r\n  \"species\": \"Cão-ou-Gato\",\r\n  \"tutorName\": \"Exemplo-Nome-Tutor\",\r\n  \"tutorEmail\": \"Exemplo-Tutor-Email\",\r\n  \"age\": 0,\r\n  \"weight\": 0.0,\r\n  \"color\": \"Exemplo-Cor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar um Pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/{id-do-pet}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"{id-do-pet}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar um Pet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Exemplo-Nome\",\r\n  \"breed\": \"Exemplo-Raça\",\r\n  \"species\": \"Cão-ou-Gato\",\r\n  \"tutorName\": \"Exemplo-Nome-Tutor\",\r\n  \"tutorEmail\": \"Exemplo-Tutor-Email\",\r\n  \"age\": 0,\r\n  \"weight\": 0.0,\r\n  \"color\": \"Exemplo-Cor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pets/{id-do-pet}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"{id-do-pet}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Pet pelo ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/{id-do-pet}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"{id-do-pet}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Cães",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/dogs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"dogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Gatos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/cats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Imagens com base na Raça (API Externa)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/images?species={dog ou cat}&breed={nome-da-raça}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"images"
+							],
+							"query": [
+								{
+									"key": "species",
+									"value": "{dog ou cat}"
+								},
+								{
+									"key": "breed",
+									"value": "{nome-da-raça}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Raças (API Externa)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/breeds?species={dog ou cat}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"breeds"
+							],
+							"query": [
+								{
+									"key": "species",
+									"value": "{dog ou cat}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "_Esse é nosso sistema de cadastro e gerenciamento de PETS! Nele, você pode criar, deletar, atualizar e buscar seus PETS de acordo com o banco de dados e a API exterma!_"
+		},
+		{
+			"name": "Agenda de Cuidados",
+			"item": [
+				{
+					"name": "Lista de Agendamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/pets/appointments/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"pets",
+								"appointments",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agendamento Manual",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"petId\": \"Id-Do-Pet-Sem-Aspas\",\r\n  \"careType\": \"Exemplo-Cuidado\",\r\n  \"days\": \"Exemplo-Dias-Agendamento\",\r\n  \"tutorEmail\": \"Exemplo-Email-Tutor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/pets/appointments/manual",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"pets",
+								"appointments",
+								"manual"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "_Esse é o nosso sistema de agendamentos manuais para o seu pet!_\n\nNele, também é possível visualizar todos os agendamentos realizados, sejam eles manuais ou automáticos!"
+		}
+	]
+}

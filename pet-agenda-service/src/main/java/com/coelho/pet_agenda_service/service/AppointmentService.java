@@ -93,7 +93,7 @@ public class AppointmentService {
         Appointment appointment = appointmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Agendamento não encontrado!"));
 
-        appointment.setDays(appointment.getDays().plusDays(days)); // Reagendar para X dias depois
+        appointment.setDays(appointment.getDays().plusDays(days)); 
         appointment.setStatus("Reagendado");
         return appointmentRepository.save(appointment);
     }
